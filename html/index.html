@@ -37,8 +37,8 @@
       },
       // For early access or custom font
       custom: {
-        families: ['Noto Sans KR'], // 'Nanum Gothic'
-        urls: ['/css/notosans.css']
+        families: ['Noto Sans KR', 'Pretendard'], // 'Nanum Gothic'
+        urls: ['/css/notosans.css', '/css/pretendard.css']
         // ''
       }
     });
@@ -157,10 +157,10 @@
         <div class="inner_wrap">
           <div class="flex_wrap">
             <div class="left_wrap">
-              <a href="#">고객전용 홈페이지</a>
+              <a class="customer" href="#">고객전용 홈페이지<i class="icon_circle-arrow"></i></a>
               <div class="link_select">
-                <button type="button">유관기관 바로가기</button>
-                <ul>
+                <button type="button">유관기관 바로가기<i class="icon_circle-arrow"></i></button>
+                <ul class="link_list">
                   <li>리스트</li>
                 </ul>
               </div>
