@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Myriad Web Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('※'), 
+    url('../fonts/myriad-web-pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Myriad Web Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: local('※'), 
+    url('../fonts/myriadwebpro-bold.woff') format('woff');
+}

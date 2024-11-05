@@ -37,8 +37,8 @@
       },
       // For early access or custom font
       custom: {
-        families: ['Noto Sans KR', 'Pretendard'], // 'Nanum Gothic'
-        urls: ['/css/notosans.css', '/css/pretendard.css']
+        families: ['Noto Sans KR', 'Pretendard', 'Myriad Web Pro'], // 'Nanum Gothic'
+        urls: ['css/notosans.css', 'css/pretendard.css', 'css/myriad.css']
         // ''
       }
     });
@@ -90,8 +90,8 @@
     <link rel="stylesheet" type="text/css" href="css/css_lib/jquery.bxslider.min.css">
     <link rel="stylesheet" type="text/css" href="css/css_lib/animate.css">
 
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script src="/js/slick/slick.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/slick/slick.js"></script>
     <!-- //ktl lib -->
     <!-- ktl css -->
     <link rel="stylesheet" type="text/css" href="css/css_src/reset.css">
@@ -177,10 +177,18 @@
                   <a href="#">English</a>
                 </li>
               </ul>
-              <div class="top_banner">
-                <div>
-                  <img src="" alt="">
+              <div class="top_banner">                
+                <button class="btn_top_banner top_banner_prev"><i class="icon_circle-arrow"></i></button>
+                <div class="top_banner_slider">
+                  <img src="images/common/top_banner_01.jpg" alt="과학기술정보통신부 특정연구기관 육성법 제 2조에 따른 특정연구기관">
+                  <img src="images/common/top_banner_02.jpg" alt="산업통상자원부 산업기술혁신 촉진법 제 41조에 의해 설립된 산하기관">
+                  <img src="images/common/top_banner_03.jpg" alt="기획재정부 공공기관 운영에 관한 법률 제 4조에 의한 기타 공공기관">
+                  <img src="images/common/top_banner_04.jpg" alt="유네스코 지원 설립 since 1966">
+                  <img src="images/common/top_banner_05.jpg" alt="KTL 국내 유일 공공 종합시험인증기관">
+                  <img src="images/common/top_banner_06.jpg" alt="Beyond Korea No.1+ 국민과 함께 성장하는 국가대표 시험인증기관">
+                  <img src="images/common/top_banner_07.jpg" alt="ANF 아시아 인증기관">
                 </div>
+                <button class="btn_top_banner top_banner_next"><i class="icon_circle-arrow"></i></button>
               </div>
             </div>
           </div>
@@ -193,7 +201,7 @@
           <div class="flex_wrap">
             <h1 class="logo">
               <a href="" title="KTL 한국산업기술시험원 메인이동">
-                <img src="" alt="KTL 한국산업기술시험원 로고">					
+                <img src="images/common/ktl_logo.svg" alt="KTL 한국산업기술시험원 로고">					
               </a>
             </h1>
             <ul class="gnb">
@@ -261,7 +269,7 @@
                 </div>
               </li>
             </ul>
-            <div class="gnb_btn">
+            <div class="re_gnb_btn btn_grp">
               <button type="button" class="btn_top_search_open"><span class="hide">검색창 열기</span></button>
               <button type="button" class="btn_allmenu_open"><span class="hide">메뉴 열기</span></button>
               <button type="button" class="btn_allmenu_close" style="display: none;"><span class="hide">메뉴 닫기</span></button>
