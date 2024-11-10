@@ -30,6 +30,7 @@
 .re_header,
 .re_header button {
   font-family: 'Pretendard','NotoKR','Malgun Gothic',Arial,sans-serif;
+  letter-spacing: 0;
 }
 .inner_wrap {
   max-width: 1400px;
