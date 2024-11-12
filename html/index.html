@@ -530,14 +530,14 @@
       <section class="contents_02">
         <div class="inner_wrap">
           <div class="flex_wrap">
-            <div class="left_wrap">
+            <div class="left_wrap board_wrap">
               <div class="board_tap">
                 <ul>
                   <li>
-                    <button type="button" class="on" control-area="">전체</button>
+                    <button type="button" class="on" control-area="board_all">전체</button>
                   </li>
                   <li>
-                    <button type="button" class="" control-area="">공지사항</button>
+                    <button type="button" class="" control-area="board_notice">공지사항</button>
                   </li>
                   <li>
                     <button type="button" class="" control-area="">사업공고</button>
@@ -553,7 +553,7 @@
               </div>
               <div class="board_contents">
                 <!-- 전체 -->
-                <div class="board_all">
+                <div class="board_part on" id="board_all">
                   <a href="#" class="board_accent">
                     <div class="date">
                       <div class="day">20</div>
@@ -562,7 +562,7 @@
                     <div class="txts">
                       <p class="tit">
                         <b>채용ㆍ입찰</b>
-                        [공고 제2024-1-0627호] 전도성 저주파 내성 신호발생기(직...
+                        [공고 제2024-1-0627호] 전도성 저주파 내성 신호발생기(직류 포트)
                       </p>
                       <p class="txt">
                         <b>[입찰]</b>
@@ -585,6 +585,97 @@
                         <span>2024.09.20</span>
                       </a>
                     </li>
+                    <li>
+                      <a href="#">
+                        <b>채용.입찰</b>
+                        <p>공고 제2024-1-0582호 의료데이터 중개 플랫폼 설계</p>
+                        <span>2024.09.19</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <b>사업공고</b>
+                        <p>「2024년 K-Health 대구 AI 의료생태계 구축 지원사업」 수혜</p>
+                        <span>2024.09.13</span>
+                      </a>
+                    </li>                    
+                    <li>
+                      <a href="#">
+                        <b>사업공고</b>
+                        <p>「G밸리의료기기개발지원센터 미국진출 프로그램 참가기업」 모집 공고</p>
+                        <span>2024.09.06</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <b>보도자료</b>
+                        <p>KTL, 「인도 진출을 위한 비즈니스 전략 세미나」 성황리 개최</p>
+                        <span>2024.09.04</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- 공지사항 -->
+                <div class="board_part" id="board_notice">
+                  <a href="#" class="board_accent">
+                    <div class="date">
+                      <div class="day">20</div>
+                      <div class="ym">2024.10</div>
+                    </div>
+                    <div class="txts">
+                      <p class="tit">
+                        <b>채용ㆍ입찰</b>
+                        [공고 제2024-1-0627호] 전도성 저주파 내성 신호발생기(직류 포트)
+                      </p>
+                      <p class="txt">
+                        <b>[입찰]</b>
+                        [공고 제2024-1-0627호] 전도성 저주파 내성 신호발생기(직류 포트)
+                      </p>
+                    </div>
+                  </a>
+                  <ul class="board_list">
+                    <li>
+                      <a href="#">
+                        <b>공지사항</b>
+                        <p>중국 샹위메디컬 의료기기 글로벌 파트너십 상담회 참가 안내</p>
+                        <span>2024.09.24</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <b>공지사항</b>
+                        <p>베트남 인증기관 QUATEST3 초청 설명회</p>
+                        <span>2024.09.20</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <b>공지사항</b>
+                        <p>공고 제2024-1-0582호 의료데이터 중개 플랫폼 설계</p>
+                        <span>2024.09.19</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <b>공지사항</b>
+                        <p>「2024년 K-Health 대구 AI 의료생태계 구축 지원사업」 수혜</p>
+                        <span>2024.09.13</span>
+                      </a>
+                    </li>                    
+                    <li>
+                      <a href="#">
+                        <b>공지사항</b>
+                        <p>「G밸리의료기기개발지원센터 미국진출 프로그램 참가기업」 모집 공고</p>
+                        <span>2024.09.06</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <b>공지사항</b>
+                        <p>KTL, 「인도 진출을 위한 비즈니스 전략 세미나」 성황리 개최</p>
+                        <span>2024.09.04</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
 
@@ -593,7 +684,7 @@
             <div class="right_wrap">
               <div class="right_first">
                 <div class="banner_notice">
-                  <div class="banner_tit">
+                  <div class="right_tit">
                     <h4>알림판</h4>
                     <div class="slider_control">
                       <button type="button" class="btn_prev"><i class="icon_left_arrow"></i></button>
@@ -619,7 +710,7 @@
                   </div>
                 </div>
                 <div class="banner_news">
-                  <div class="banner_tit">
+                  <div class="right_tit">
                     <h4>KTL 소식</h4>
                     <div class="slider_control">
                       <button type="button" class="btn_prev"><i class="icon_left_arrow"></i></button>
@@ -647,7 +738,32 @@
               </div>
 
               <div class="right_second">
-                
+                <div class="right_tit">
+                  <h4>보도자료</h4>
+                </div>
+                <div class="press">
+                  <div class="press_img">
+                    <img src="images/main/press_01.jpg" alt="보도자료 최신뉴스 이미지">
+                  </div>
+                  <div class="press_wrap">
+                    <a href="#" class="press_accent">
+                      <p>KTL, 반도체 소재·부품 산업 자립화에 앞장서!</p>
+                      <span>2024.09.24</span>
+                    </a>
+                    <ul class="press_list">
+                      <li>
+                        <a href="#">
+                          <p>KTL, 반도체 소재·부품 산업 자립화에 앞장서!</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <p>KTL, 반도체 소재·부품 산업 자립화에 앞장서!</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
             </div>

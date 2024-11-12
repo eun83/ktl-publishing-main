@@ -1,5 +1,28 @@
 $(document).ready(function () {
 
+  // board tap
+  $('.board_wrap [control-area]').click(function(){
+    const button = $(this);
+    const control_area_id = button.attr('control-area');
+    if(control_area_id == ''){
+      return false;
+    }
+    if(!button.hasClass('on')){
+      const board_wrap = button.closest('.board_wrap');
+      const control_area = $('#'+control_area_id);
+      
+      board_wrap.find('.board_tap button.on').removeClass('on');
+      board_wrap.find('.board_part.on').removeClass('on');
+
+      button.addClass('on');
+      control_area.addClass('on');
+
+      
+    } 
+    return false;
+    
+  });
+
   // visual
   $('.visual_slider').slick({
     infinite: true,

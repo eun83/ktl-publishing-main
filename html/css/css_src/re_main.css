@@ -117,7 +117,7 @@
 
 /* contents 01 : links, director */
 .contents_01 {
-  margin-bottom: 70px;
+  margin-bottom: 35px;
 }
 .contents_01 .flex_wrap {
   align-items: stretch;
@@ -203,13 +203,24 @@
   z-index: -1;
   background-color: #044689;
 }
+
 /* contents 02 :  */
-
-.contents_02 .left_wrap {
-  flex-basis: 50%;
+.contents_02 {
+  padding: 35px 0;
+  margin-bottom: 35px;
 }
-
-
+.contents_02 .flex_wrap {
+  gap: 0 50px;
+  align-items: flex-start;
+}
+.contents_02 .left_wrap {
+  width: 50%;
+}
+.contents_02 .right_wrap {
+  width: calc(50% - 50px);
+}
+/* left */
+/* tap */
 .contents_02 .board_tap {
   display: flex;
   flex-wrap: wrap;
@@ -254,21 +265,149 @@
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.contents_02 .board_contents {}
-.contents_02 .board_accent {
+/* tap contents */
+.contents_02 .board_part {
+  display: none;
+}
+.contents_02 .board_part.on {
   display: block;
+}
+.contents_02 .board_accent {
+  display: flex;
   padding: 25px;
+  gap: 0 30px;
   background-color: #f6f6f6;
+  margin-bottom: 30px;
 }
 .contents_02 .board_accent .date {
+  flex: 0 0 80px;
   text-align: center;
+  font-size: 16px;
+  color: #696969;
 }
+.contents_02 .board_accent .date .day {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #111;
+}
+.contents_02 .board_accent .txts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  width: calc(100% - 160px);
+  font-size: 16px;
+  font-weight: 300;
+  color: #696969;
+}
+.contents_02 .board_accent .txts p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.contents_02 .board_accent .txts .tit {
+  font-size: 17px;
+  font-weight: 500;
+  color: #111;
+}
+.contents_02 .board_list li {
+  border-bottom: 1px solid #efefef;
+}
+.contents_02 .board_list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 30px;
+  font-size: 16px;
+  color: #111;
+  padding: 12px 20px 12px 0;
+}
+.contents_02 .board_list li a b {
+  flex: 0 0 70px;
+}
+.contents_02 .board_list li a p {
+  flex: 1 1 auto;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.contents_02 .board_list li a span {
+  flex: 0 0 80px;
+  font-size: 13px;
+  color: #696969;
+}
+/* right */
 .contents_02 .right_wrap .right_first {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
 }
-
-
-
+.contents_02 .right_tit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.contents_02 .right_tit h4 {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  border-bottom: 2px solid #111;
+}
 .contents_02 .banner_slider {
   max-width: 303px;
+  border: 3px solid #efefef;
 }
+.contents_02 .press {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 20px;
+}
+.contents_02 .press_img {
+  flex: 0 0 234px;
+  border: 3px solid #efefef;
+}
+.contents_02 .press_img img {
+  width: 100%;
+}
+.contents_02 .press_wrap {
+  flex: 1 1 auto;
+  width: calc(100% - 254px);
+}
+.contents_02 .press_wrap .press_accent {
+  display: block;
+  background-color: #f6f6f6;
+  padding: 8px 12px 3px;
+}
+.contents_02 .press_wrap .press_accent p {
+  width: 100%;
+  color: #111;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 19px;
+  line-height: 20px;
+}
+.contents_02 .press_wrap .press_accent span {
+  font-size: 13px;
+  color: #696969;
+}
+.contents_02 .press_wrap .press_list {
+  padding: 5px 30px 0;
+}
+.contents_02 .press_wrap .press_list a {
+  font-size: 16px;
+  line-height: 24px;
+  color: #111;
+}
+.contents_02 .press_wrap .press_list a p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 게시판 리스트 스타일 공통 css 뭉치기 */
