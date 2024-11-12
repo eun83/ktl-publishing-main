@@ -57,8 +57,8 @@ $(document).ready(function () {
     autoplay: false,
     autoplaySpeed: 2000,
     vertical: false,
-    prevArrow: $('.banner_notice > .banner_tit > .slider_control > .btn_prev'),
-    nextArrow: $('.banner_notice > .banner_tit > .slider_control > .btn_next'),
+    prevArrow: $('.banner_notice > .right_tit > .slider_control > .btn_prev'),
+    nextArrow: $('.banner_notice > .right_tit > .slider_control > .btn_next'),
     responsive: [
       {
         breakpoint: 768,
@@ -80,8 +80,8 @@ $(document).ready(function () {
     autoplay: false,
     autoplaySpeed: 2000,
     vertical: false,
-    prevArrow: $('.banner_news > .banner_tit > .slider_control > .btn_prev'),
-    nextArrow: $('.banner_news > .banner_tit > .slider_control > .btn_next'),
+    prevArrow: $('.banner_news > .right_tit > .slider_control > .btn_prev'),
+    nextArrow: $('.banner_news > .right_tit > .slider_control > .btn_next'),
     responsive: [
       {
         breakpoint: 768,
