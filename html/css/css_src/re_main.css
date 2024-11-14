@@ -108,9 +108,10 @@
 
 
 /* visual */
-.visual {
+.re_main .visual {
   position: relative;
   width: 100%;
+  padding: 0;
 }
 .visual .visual_contents > a {
   display: flex;
@@ -154,6 +155,9 @@
 
 
 /* contents */
+.re_main section {
+  padding: 50px 0;
+}
 .re_contents .ellips {
   width: 100%;
   overflow: hidden;
@@ -173,7 +177,8 @@
   font-size: 18px;
 }
 /* contents 01 : links, director */
-.contents_01 {
+.re_main .contents_01 {
+  padding: 0;
   margin-bottom: 35px;
 }
 .contents_01 .flex_wrap {
@@ -262,9 +267,8 @@
 }
 
 /* contents 02 : board, banner */
-.contents_02 {
-  margin-bottom: 35px;
-  padding: 35px 0;
+.re_main .contents_02 {
+  padding: 35px 0 70px;
 }
 .contents_02 .flex_wrap {
   align-items: flex-start;
@@ -428,8 +432,6 @@
 
 /* contents 03 : SNS */
 .contents_03 {
-  margin-bottom: 35px;
-  padding: 50px 0;
   background-color: #efefef;
 }
 .contents_03 .hashtag {
@@ -528,6 +530,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .sns_part ul {
   display: flex;
   gap: 0 50px;
+  overflow: hidden;
 }
 .sns_part li {
   width: calc((100% - 150px) / 4);
@@ -536,10 +539,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   padding: 15px 20px;
   transition: all 0.3s ease-in-out;
 }
-.sns_part li img {
-  height: 20px;
+.sns_part li .logo {
+  height: 18px;
   width: auto;
   margin-bottom: 15px;
+}
+.sns_part .post,
+.sns_part .post iframe,
+.sns_part .post img {
+  width: 100%;
+  max-height: 200px;
+  object-position: top center;
 }
 .sns_part li p {
   position: relative;
@@ -586,3 +596,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   display: block;
 }
 
+/* contents 04 : ARCHIVE */
+.contents_04 {
+}
+
+/* contents 05 : SERVICE */
+.contents_05 {
+  background-color: #f2f7fa;
+}
