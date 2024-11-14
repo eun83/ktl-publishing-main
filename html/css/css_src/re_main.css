@@ -10,9 +10,21 @@
 /* button */
 .btn_basic {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* btn_more */
+.btn_more {
+  display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #cfcfcf;
 }
+
+
 /* icon */
 /* arrow */
 .icon_left_arrow,
@@ -20,8 +32,8 @@
   display: block;
   width: 18px;
   height: 10px;
-  background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Layer 2' viewBox='0 0 17.42 8.99'%3E%3Cg data-name='Layer 1'%3E%3Cpath d='M4.49 8.24.75 4.49 4.49.75' style='stroke-linecap:round;fill:none;stroke:%23000;stroke-linejoin:round;stroke-width:1.5px'/%3E%3Cpath d='M.75 4.49h16.67' style='fill:none;stroke:%23000;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
 }
 .icon_right_arrow {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Layer 2' viewBox='0 0 17.42 8.99'%3E%3Cg data-name='Layer 1'%3E%3Cpath d='m12.93.75 3.74 3.74-3.74 3.75' style='stroke-linecap:round;fill:none;stroke:%23000;stroke-linejoin:round;stroke-width:1.5px'/%3E%3Cpath d='M16.67 4.49H0' style='fill:none;stroke:%23000;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/g%3E%3C/svg%3E");
@@ -32,11 +44,36 @@
   display: block;
   width: 10px;
   height: 11px;
-  background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Layer 2' viewBox='0 0 9.79 10.91'%3E%3Cpath d='m0 0 9.49 4.95c.41.21.41.8 0 1.01L0 10.91V0Z' data-name='Layer 1'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
 }
 .icon_stop {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_2' data-name='Layer 2' viewBox='0 0 6.99 9.83'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23000;stroke-miterlimit:10;stroke-width:1.75px%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath d='M.88 9.83V0M6.11 0v9.83' class='cls-1'/%3E%3C/g%3E%3C/svg%3E");
+}
+/* plus */
+.icon_plus {
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 13px;
+  
+}
+.icon_plus::before,
+.icon_plus::after {
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 13px;
+  height: 1px;
+  background-color: currentColor;
+  content: '';
+}
+.icon_plus::after {
+  width: 1px;
+  height: 13px;
+  top: 0;
+  left: 6px;
 }
 
 
@@ -45,8 +82,8 @@
 /* slider control */
 .slider_control {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 0 20px;
 }
 .slider_control .pagination {
@@ -59,8 +96,8 @@
 }
 .control_box {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .control_box button {
   display: none;
@@ -82,17 +119,19 @@
   flex-direction: column;
   width: 100%;
   height: 640px;
+  padding: 150px 50px;
   background-color: #444;
-  color: #fff;
+  background-position: bottom center;
+  background-size: cover;
   font-weight: 600;
+  color: #fff;
   text-align: center;
   word-break: keep-all;
-  padding: 150px 50px;
-  background-size: cover;
-  background-position: bottom center;
 }
 .visual .visual_contents h2.title {
   font-size: 40px;
+  margin-bottom: 0;
+  color: #fff;
 }
 .visual .visual_contents p.text {
   font-size: 16px;
@@ -115,7 +154,24 @@
 
 
 /* contents */
-
+.re_contents .ellips {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.re_contents .title {
+  margin-bottom: 25px;
+  color: #111;
+  text-align: center;
+}
+.re_contents .title h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+.re_contents .title p {
+  font-size: 18px;
+}
 /* contents 01 : links, director */
 .contents_01 {
   margin-bottom: 35px;
@@ -124,39 +180,39 @@
   align-items: stretch;
 }
 .re_contents .link_grp {
-  flex: 1 1 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
-  background-color: #fff;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  min-height: 156px;
   border: 1px solid #d7d7d7;
   border-right: 0;
-  min-height: 156px;
+  background-color: #fff;
 }
 .re_contents .link_grp li {
-  flex: 1 1 20%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex: 1 1 20%;
 }
 .re_contents .link_grp a span {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 15px 0;
+  justify-content: center;
   flex-direction: column;
+  gap: 15px 0;
 }
 .re_contents .link_grp a span::before {
-  content: '';
   display: block;
   width: 77px;
   height: 63px;
-  border-radius: 12px;
   border: 1px solid #d7d7d7;
   background-image: url(../../images/common/ktl_logo.svg);
   background-repeat: no-repeat;
-  background-size: 38px 28px;
   background-position: center;
+  background-size: 38px 28px;
+  content: '';
+  border-radius: 12px;
 }
 .re_contents .director {
   display: flex;
@@ -167,7 +223,6 @@
   background-color: #0055ac;
 }
 .re_contents .director::after {
-  content: '';
   display: block;
   position: absolute;
   top: -30px;
@@ -176,6 +231,7 @@
   height: 183px;
   background-image: url(../../images/main/director_character.svg);
   background-repeat: no-repeat;
+  content: '';
 }
 .re_contents .director p {
   font-size: 17px;
@@ -195,24 +251,24 @@
   z-index: 1;
 }
 .re_contents .director p span b::after {
-  content: '';
   position: absolute;
   bottom: -2px;
   left: -3%;
+  z-index: -1;
   width: 106%;
   height: 7px;
-  z-index: -1;
   background-color: #044689;
+  content: '';
 }
 
-/* contents 02 :  */
+/* contents 02 : board, banner */
 .contents_02 {
-  padding: 35px 0;
   margin-bottom: 35px;
+  padding: 35px 0;
 }
 .contents_02 .flex_wrap {
-  gap: 0 50px;
   align-items: flex-start;
+  gap: 0 50px;
 }
 .contents_02 .left_wrap {
   width: 50%;
@@ -224,8 +280,8 @@
 /* tap */
 .contents_02 .board_tap {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 .contents_02 .board_tap ul {
@@ -241,31 +297,11 @@
   color: #111;
 }
 .contents_02 .board_tap button.on {
+  border-bottom: 2px solid #111;
   font-weight: 700;
   color: #111;
-  border-bottom: 2px solid #111;
 }
-.board_more {
-  display: block;
-  position: relative;
-  width: 35px;
-  height: 35px;
-  border: 1px solid #cfcfcf;
-}
-.board_more::before,
-.board_more::after {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 1px;
-  top: 50%;
-  left: calc(50% - 7px);
-  background-color: currentColor;
-}
-.board_more::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
+
 /* tap contents */
 .contents_02 .board_part {
   display: none;
@@ -275,38 +311,31 @@
 }
 .contents_02 .board_accent {
   display: flex;
-  padding: 25px;
   gap: 0 30px;
-  background-color: #f6f6f6;
   margin-bottom: 30px;
+  padding: 25px;
+  background-color: #f6f6f6;
+  color: #696969;
 }
 .contents_02 .board_accent .date {
   flex: 0 0 80px;
-  text-align: center;
   font-size: 16px;
-  color: #696969;
+  text-align: center;
 }
 .contents_02 .board_accent .date .day {
   font-size: 36px;
-  line-height: 40px;
   font-weight: 600;
+  line-height: 40px;
   color: #111;
 }
 .contents_02 .board_accent .txts {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   flex: 1 1 auto;
+  flex-direction: column;
   width: calc(100% - 160px);
   font-size: 16px;
   font-weight: 300;
-  color: #696969;
-}
-.contents_02 .board_accent .txts p {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .contents_02 .board_accent .txts .tit {
   font-size: 17px;
@@ -318,22 +347,18 @@
 }
 .contents_02 .board_list li a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 0 30px;
+  padding: 12px 20px 12px 0;
   font-size: 16px;
   color: #111;
-  padding: 12px 20px 12px 0;
 }
 .contents_02 .board_list li a b {
   flex: 0 0 70px;
 }
 .contents_02 .board_list li a p {
   flex: 1 1 auto;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .contents_02 .board_list li a span {
   flex: 0 0 80px;
@@ -353,10 +378,10 @@
 }
 .contents_02 .right_tit h4 {
   display: inline-block;
+  border-bottom: 2px solid #111;
   font-size: 22px;
   font-weight: 700;
   color: #111;
-  border-bottom: 2px solid #111;
 }
 .contents_02 .banner_slider {
   max-width: 303px;
@@ -380,17 +405,13 @@
 }
 .contents_02 .press_wrap .press_accent {
   display: block;
+  padding: 8px 15px 3px;
   background-color: #f6f6f6;
-  padding: 8px 12px 3px;
 }
 .contents_02 .press_wrap .press_accent p {
-  width: 100%;
-  color: #111;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   font-size: 19px;
   line-height: 20px;
+  color: #111;
 }
 .contents_02 .press_wrap .press_accent span {
   font-size: 13px;
@@ -404,11 +425,164 @@
   line-height: 24px;
   color: #111;
 }
-.contents_02 .press_wrap .press_list a p {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+/* contents 03 : SNS */
+.contents_03 {
+  margin-bottom: 35px;
+  padding: 50px 0;
+  background-color: #efefef;
+}
+.contents_03 .hashtag {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 50px;
+  width: fit-content;
+  padding: 10px 50px;
+  margin: 0 auto;
+  border: 1px solid #b2b2b2;
+  background-color: #fff;
+  border-radius: 50px;
+  color: #696969;
+}
+.contents_03 .hashtag li {
+  transition: all 0.3s ease-in-out;
+}
+.contents_03 .hashtag li:hover,
+.contents_03 .hashtag li:focus,
+.contents_03 .hashtag li:active {
+  color: #111;
+  cursor: pointer;
+}
+.contents_03 .tap_sns {
+  display: flex;
+  gap: 0 15px;
+  width: fit-content;
+  margin: 40px auto;
+}
+.contents_03 .tap_sns button {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease-in-out;
+}
+/* sns icon */
+.contents_03 .youtube button {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19.52 13.76'%3E%3Cdefs%3E%3CclipPath id='a' transform='translate(-.02 -2.88)'%3E%3Cpath d='M0 0h19.52v19.52H0z' style='fill:none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg data-name='레이어 2'%3E%3Cg data-name='레이어 1' style='clip-path:url(%23a)'%3E%3Cpath d='M19.13 5a2.44 2.44 0 0 0-.63-1.1 2.56 2.56 0 0 0-1.09-.64c-1.53-.41-7.63-.41-7.63-.41s-6.1 0-7.63.41a2.56 2.56 0 0 0-1.09.64A2.54 2.54 0 0 0 .43 5 25.6 25.6 0 0 0 0 9.76a25.6 25.6 0 0 0 .41 4.73 2.43 2.43 0 0 0 .63 1.1 2.38 2.38 0 0 0 1.09.64c1.53.41 7.63.41 7.63.41s6.1 0 7.63-.41a2.38 2.38 0 0 0 1.09-.64 2.34 2.34 0 0 0 .63-1.1 25.6 25.6 0 0 0 .41-4.73A25.6 25.6 0 0 0 19.13 5Z' style='fill:%23ff0302' transform='translate(-.02 -2.88)'/%3E%3Cpath d='M7.78 12.66v-5.8l5.11 2.9Z' style='fill:%23fefefe' transform='translate(-.02 -2.88)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 22px 15px;
+}
+.contents_03 .facebook button {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 16'%3E%3Cg data-name='레이어 2'%3E%3Cpath d='M8 5.5H5v-2a1 1 0 0 1 1-1h1V0H5a3 3 0 0 0-3 3v2.5H0V8h2v8h3V8h2Z' data-name='레이어 1' style='fill:%231976d2;fill-rule:evenodd'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 12px 22px;
+}
+.contents_03 .instagram button {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='-537.59' x2='-524.52' y1='929.83' y2='942.9' gradientTransform='matrix(1 0 0 -1 539.06 944.36)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffc107'/%3E%3Cstop offset='.51' stop-color='%23f44336'/%3E%3Cstop offset='.99' stop-color='%239c27b0'/%3E%3C/linearGradient%3E%3ClinearGradient xlink:href='%23a' id='b' x1='-533.88' x2='-528.23' y1='933.53' y2='939.19'/%3E%3ClinearGradient xlink:href='%23a' id='c' x1='-527.13' x2='-526.38' y1='940.29' y2='941.04'/%3E%3C/defs%3E%3Cg data-name='레이어 2'%3E%3Cpath d='M11 0H5a5 5 0 0 0-5 5v6a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5Zm3.5 11a3.5 3.5 0 0 1-3.5 3.5H5A3.5 3.5 0 0 1 1.5 11V5A3.5 3.5 0 0 1 5 1.5h6A3.5 3.5 0 0 1 14.5 5Z' style='fill:url(%23a)'/%3E%3Cpath d='M8 4a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6.5A2.5 2.5 0 1 1 10.5 8 2.5 2.5 0 0 1 8 10.5Z' style='fill:url(%23b)'/%3E%3Ccircle cx='12.3' cy='3.7' r='.53' style='fill:url(%23c)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 22px 22px;
+}
+.contents_03 .blog button {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.95 13.86'%3E%3Cdefs%3E%3ClinearGradient id='a' x2='10.95' y1='6.93' y2='6.93' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300d44d'/%3E%3Cstop offset='1' stop-color='%2300e56d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg data-name='레이어 2'%3E%3Cpath d='M6.09 3.19A4.57 4.57 0 0 0 3 4.41V0H0v13.6h3v-1a4.63 4.63 0 0 0 3.09 1.22A5.1 5.1 0 0 0 11 8.53a5.11 5.11 0 0 0-4.91-5.34Zm-.6 8A2.68 2.68 0 0 1 3 9.56a2.74 2.74 0 0 1-.23-1.05 2.48 2.48 0 0 1 .23-1 2.69 2.69 0 1 1 2.47 3.72Z' data-name='레이어 1' style='fill:url(%23a)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 17px 22px;
+}
+/* hover & on */
+.contents_03 .youtube button:hover,
+.contents_03 .youtube button.on,
+#youtube_part li:hover,
+#youtube_part li:focus {
+  border-color: #e20e0e;
+}
+.contents_03 .facebook button:hover,
+.contents_03 .facebook button.on,
+#facebook_part li:hover,
+#facebook_part li:focus {
+  border-color: #0c69e2;
+}
+.contents_03 .instagram button:hover,
+.contents_03 .instagram button.on,
+#instagram_part li:hover,
+#instagram_part li:focus {
+  border-color: #d34169;
+}
+.contents_03 .blog button:hover,
+.contents_03 .blog button.on,
+#blog_part li:hover,
+#blog_part li:focus {
+  border-color: #31a836;
+}
+/*
+유튜브
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_2' data-name='Layer 2' viewBox='0 0 295.7 66.01'%3E%3Cdefs%3E%3Cstyle%3E.cls-3%7Bfill:%23292829%7D%3C/style%3E%3C/defs%3E%3Cg id='Isolation_Mode' data-name='Isolation Mode'%3E%3Cpath d='M92.34 10.31A11.828 11.828 0 0 0 84 1.97C76.65 0 47.15 0 47.15 0S17.67 0 10.31 1.97a11.81 11.81 0 0 0-8.34 8.34C0 17.66 0 33.01 0 33.01s0 15.35 1.97 22.7c1.08 4.05 4.28 7.25 8.34 8.34 7.37 1.97 36.84 1.97 36.84 1.97s29.5 0 36.85-1.97c4.05-1.08 7.25-4.28 8.34-8.34 1.96-7.35 1.96-22.7 1.96-22.7s0-15.35-1.96-22.7' style='fill:%23e7211b'/%3E%3Cpath d='M37.73 47.15 62.23 33l-24.5-14.14v28.29z' style='fill:%23fff'/%3E%3Cpath d='M136.88 60.05c-1.86-1.26-3.19-3.21-3.98-5.87-.78-2.66-1.18-6.18-1.18-10.59v-6c0-4.46.45-8.03 1.35-10.73.9-2.7 2.31-4.67 4.22-5.9 1.9-1.23 4.41-1.86 7.52-1.86s5.51.63 7.35 1.89c1.85 1.26 3.2 3.23 4.05 5.9.86 2.67 1.28 6.24 1.28 10.68v6c0 4.41-.42 7.95-1.25 10.62-.82 2.67-2.17 4.64-4.05 5.87-1.86 1.23-4.4 1.86-7.59 1.86-3.27.01-5.85-.62-7.71-1.88m10.45-6.47c.51-1.35.78-3.56.78-6.6V34.08c0-2.97-.26-5.13-.78-6.51-.51-1.36-1.42-2.05-2.73-2.05s-2.15.69-2.67 2.05c-.51 1.37-.78 3.54-.78 6.51v12.89c0 3.06.24 5.27.73 6.6.5 1.35 1.4 2.03 2.7 2.03s2.22-.68 2.75-2.03M280.11 43.7v2.09c0 2.66.08 4.63.24 5.97.15 1.32.48 2.3.98 2.9.5.6 1.26.91 2.3.91 1.39 0 2.35-.54 2.86-1.62.51-1.08.8-2.88.84-5.4l8.03.47c.04.36.06.86.06 1.48 0 3.83-1.05 6.68-3.13 8.57-2.08 1.89-5.04 2.84-8.87 2.84-4.59 0-7.8-1.44-9.65-4.32-1.84-2.88-2.76-7.32-2.76-13.35v-7.22c0-6.21.96-10.73 2.87-13.59 1.91-2.85 5.18-4.28 9.81-4.28 3.2 0 5.64.59 7.35 1.76s2.91 2.99 3.62 5.46c.69 2.48 1.05 5.9 1.05 10.25v7.08h-15.59Zm1.18-17.4c-.46.59-.78 1.54-.95 2.86-.16 1.32-.24 3.35-.24 6.03v2.97h6.81v-2.97c0-2.66-.09-4.67-.27-6.03-.18-1.36-.51-2.34-.98-2.9-.46-.55-1.2-.84-2.19-.84-.99-.01-1.73.29-2.19.87M114.23 42.92 103.64 4.68h9.24l3.71 17.33c.95 4.28 1.64 7.91 2.09 10.92h.27c.31-2.16 1-5.78 2.08-10.86l3.84-17.4h9.24L123.4 42.93v18.35h-9.17V42.93ZM187.53 19.92v41.33h-7.28l-.81-5.06h-.19c-1.98 3.83-4.95 5.73-8.9 5.73-2.75 0-4.77-.9-6.08-2.7-1.31-1.8-1.95-4.61-1.95-8.43V19.92h9.3v30.35c0 1.84.19 3.17.6 3.95.4.78 1.08 1.19 2.02 1.19.81 0 1.59-.24 2.33-.74.73-.49 1.29-1.12 1.65-1.89V19.92h9.3ZM235.27 19.92v41.33H228l-.81-5.06H227c-1.98 3.83-4.95 5.73-8.9 5.73-2.74 0-4.77-.9-6.08-2.7-1.31-1.8-1.95-4.61-1.95-8.43V19.92h9.3v30.35c0 1.84.19 3.17.6 3.95.4.78 1.08 1.19 2.02 1.19.81 0 1.59-.24 2.33-.74.74-.49 1.29-1.12 1.65-1.89V19.92h9.3Z' class='cls-3'/%3E%3Cpath d='M212.82 12.17h-9.24v49.08h-9.11V12.17h-9.24V4.68h27.58v7.49h.01zM266.07 26.54c-.57-2.61-1.47-4.5-2.73-5.67s-2.98-1.76-5.19-1.76c-1.71 0-3.3.48-4.79 1.46-1.48.96-2.62 2.23-3.44 3.81h-.07V2.6h-8.97v58.67h7.68l.95-3.92h.19c.72 1.4 1.8 2.49 3.24 3.3 1.44.81 3.03 1.21 4.79 1.21 3.15 0 5.46-1.46 6.95-4.35 1.49-2.9 2.22-7.43 2.22-13.59v-6.54c.02-4.62-.27-8.24-.82-10.85m-8.55 16.87c0 3.02-.12 5.37-.38 7.08-.24 1.71-.66 2.93-1.25 3.65-.58.72-1.36 1.08-2.35 1.08-.77 0-1.47-.18-2.13-.54-.65-.36-1.19-.9-1.59-1.62V29.57c.32-1.13.86-2.04 1.62-2.76.76-.72 1.59-1.08 2.49-1.08.95 0 1.68.38 2.19 1.11.51.73.87 2 1.08 3.74.2 1.76.3 4.25.3 7.49v5.34h.02Z' class='cls-3'/%3E%3C/g%3E%3C/svg%3E");
+페이스북
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_2' data-name='Layer 2' viewBox='0 0 238.09 46.34'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%2336539c%7D%3C/style%3E%3C/defs%3E%3Cg id='Isolation_Mode' data-name='Isolation Mode'%3E%3Cpath d='m21.58 23.94 1.01-8.13h-7.45v-4.69c0-2.27.33-3.81 3.58-3.81h4.14v-7C22.14.21 19.69 0 16.82 0 9.92 0 6.15 3.65 6.15 10.35v5.47H0v8.13h6.15v21.59h8.99V23.95h6.44ZM43.72 15.71v4.16c-2.09-2.86-5.43-4.71-9.19-4.71-6.96 0-11.46 5.83-11.46 12.29v6.3c0 6.46 5.13 12.29 11.46 12.29 3.76 0 7.1-1.85 9.19-4.72v4.21h8.46V15.71h-8.46Zm-.4 17c0 3.52-2.5 6.38-5.57 6.38s-5.57-3.17-5.57-6.7v-3.43c0-3.52 2.19-6.7 5.57-6.7 3.08 0 5.57 2.86 5.57 6.38v4.07ZM112.19 1.15v44.39h8.46v-4.21c2.09 2.86 5.43 4.72 9.2 4.72 6.33 0 11.46-5.83 11.46-12.29v-6.3c0-6.46-4.5-12.29-11.46-12.29-5.02 0-7.28 1.81-8.59 4.41V.24l-9.07.91Zm8.87 27.48c0-3.52 2.5-6.37 5.57-6.37 3.39 0 5.58 3.17 5.58 6.7v3.43c0 3.52-2.49 6.7-5.58 6.7s-5.57-2.85-5.57-6.38v-4.08ZM79.74 17.27s-2.16-2.11-9.02-2.11-15.26 2.37-15.26 15.21 7.2 15.67 15.37 15.67c0 0 5.49.03 8.92-1.86l-2.16-6.65s-1.83 1.87-5.94 1.56c-4.03-.3-7.06-1.06-7.06-8.87 0-8.41 6.05-7.96 6.9-7.96s4.23.2 6.1 1.36l2.16-6.35ZM108.46 27.85c0-3.33-1.41-12.7-13.45-12.7s-14.46 8.66-14.46 12.7v6.55s.3 11.94 14.46 11.94c0 0 10.38-.2 13.05-2.42l-1.86-6.3s-3.43 1.97-9.67 1.97-6.99-3.98-6.99-5.9h18.93v-5.84Zm-8.06 0H89.62s-1.21-6.5 5.39-6.5 5.39 6.5 5.39 6.5M159.34 15.21c-8.22 0-14.89 4.64-14.89 14.86v1.27c0 10.02 6.67 14.85 14.89 14.85s14.89-4.63 14.89-14.85v-1.27c0-10.07-6.67-14.86-14.89-14.86m5.67 18.21c0 3.13-2.54 5.67-5.66 5.67s-5.67-2.54-5.67-5.67v-5.44c0-3.13 2.54-5.67 5.67-5.67s5.66 2.54 5.66 5.67v5.44ZM191.79 15.21c-8.22 0-14.89 4.64-14.89 14.86v1.27c0 10.02 6.67 14.85 14.89 14.85s14.89-4.63 14.89-14.85v-1.27c0-10.07-6.67-14.86-14.89-14.86m5.67 18.21c0 3.13-2.54 5.67-5.67 5.67s-5.66-2.54-5.66-5.67v-5.44c0-3.13 2.53-5.67 5.66-5.67s5.67 2.54 5.67 5.67v5.44ZM238.09 45.54l-10.23-15.17 9.32-14.51h-9.52L219 29.45V.24l-9.07.91v44.39H219V31.35l9.06 14.19h10.03z' class='cls-1'/%3E%3C/g%3E%3C/svg%3E");
+인스타
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Layer 2' viewBox='0 0 215.17 59.35'%3E%3Cpath d='M11.76.09c.62-.17 1.28-.07 1.89.07.92.23 1.88.47 2.64 1.06.39.29.74.73.7 1.23V28.3c-.02 2.83.16 5.68-.38 8.47-.4 2.27-1.3 4.53-2.97 6.2-.55.6-1.17 1.15-1.9 1.54-.61.32-1.29.61-2 .55-.16-.17-.3-.37-.27-.62.05-.67.31-1.31.53-1.94.68-2.15.86-4.41.94-6.65.06-10.5.08-21 .13-31.5 0-.27-.02-.54-.06-.81-.41.02-.67.35-.95.6-1.3 1.23-2.37 2.69-3.14 4.3-1 2.05-1.51 4.29-1.72 6.54-.18 1.46-.06 2.95.3 4.38.3 1.1.76 2.19 1.49 3.08.31.36.42.92.16 1.33-.39.4-1 .19-1.47.04-1.55-.54-2.89-1.58-3.91-2.83C.55 19.47.03 17.53-.01 15.63c.12-1.68.58-3.32 1.21-4.88.91-2.31 2.25-4.47 3.97-6.29C6.29 3.32 7.52 2.29 8.86 1.4 9.77.84 10.71.32 11.76.05Zm58.4.42C70.67.09 71.38.15 72 .23c1.1.18 2.2.44 3.23.88.32.13.59.33.84.56-.1 2.35-.2 4.7-.32 7.05 2.43.11 4.85.24 7.28.38.42.02.99.14 1.06.63.1.73-.02 1.5-.36 2.16-.21.34-.5.76-.97.73-2.36.04-4.71.11-7.07.14-.13 3.3-.22 6.61-.34 9.91-.06 3.01-.35 6.03-.02 9.04.15 1.17.3 2.38.88 3.43.24.46.67.85 1.21.91.7.06 1.39-.22 1.91-.66.83-.69 1.4-1.62 1.89-2.56.57-1.08.99-2.24 1.36-3.4.14-.51.03-1.05.08-1.57.03-2.76.48-5.53 1.45-8.13.73-1.89 1.77-3.74 3.4-5.02 1.78-1.45 4.39-1.93 6.56-1.05 1.4.53 2.53 1.6 3.23 2.88.09-.6-.05-1.27.22-1.83.39-.62 1.23-.65 1.89-.59.89.1 1.78.31 2.57.74.48.26.96.69.97 1.27-.15 5.04-.37 10.08-.2 15.12.05 1.09.21 2.18.45 3.25.2.77.46 1.61 1.12 2.13.62.47 1.51.32 2.1-.13.94-.72 1.49-1.79 1.97-2.84.12-.3.3-.6.24-.94-.35-3.02-.42-6.1.08-9.11.36-2.02.98-4.03 2.05-5.8 1.08-1.81 2.66-3.39 4.62-4.3.38-.15.76-.35 1.17-.38 1.93-.02 3.93.61 5.31 1.97.36.38.66.8.93 1.23.13-.57 0-1.17.2-1.71.31-.64 1.15-.67 1.78-.59 1.05.17 2.13.39 3.06.91.58.33.58 1.06.55 1.63-.05 5.68-.14 11.36-.18 17.03 1.32-1.82 2.53-3.72 3.56-5.71 1.27-2.41 2.35-4.95 2.89-7.62-.72-.64-1.39-1.42-1.6-2.37-.19-.78-.01-1.57.21-2.32.35-1.13 1.21-2.17 2.41-2.5.91-.25 1.95-.27 2.8.17.65.34 1.01 1.02 1.12 1.71.12.7.01 1.4-.12 2.09 1.56-.24 3.12-.49 4.65-.86 1.05-.23 2.18-.42 3.23-.09.75.22 1.3.88 1.48 1.61.19.78.25 1.62-.05 2.38-.41 1-.51 2.09-.74 3.14-.5 2.79-1.14 5.63-.66 8.47.17 1.26.44 2.53.95 3.71.31.62.71 1.31 1.44 1.53.72.19 1.45-.17 2-.6.91-.8 1.51-1.91 1.78-3.06-.61-2.97-.76-6.05-.27-9.05.35-2.25 1.01-4.47 2.13-6.48.88-1.51 2.1-2.91 3.73-3.68 1.81-.87 4.06-.87 5.83.11 1.1.55 1.93 1.48 2.56 2.51.1-.61-.06-1.29.27-1.85.5-.61 1.41-.57 2.13-.47 1.05.18 2.2.43 2.94 1.25.48.51.25 1.24.25 1.86-.09 3.31-.23 6.62-.22 9.93.02 2.53-.08 5.1.61 7.57.2.63.46 1.3 1.03 1.71.63.44 1.53.35 2.13-.1.82-.61 1.38-1.48 1.86-2.36.38-.79.84-1.56 1.04-2.41.01-5.57.04-11.14.05-16.7-.04-.47.14-1.02.62-1.22.35-.21.76-.06 1.14-.01 1.01.18 2.07.21 3.01.68.35.17.72.47.69.89v8.25c0 .32 0 .64.03.95.83-2.51 1.71-5.01 2.7-7.46.39-.91.8-1.82 1.31-2.67.38-.68 1.28-.8 2-.75 1.53.11 3.16.76 3.97 2.1.29.49.42 1.06.42 1.62-.03 2.86.14 5.72.35 8.58.07.89.08 1.78.22 2.66.1-.07.16-.16.17-.27.3-2.11.85-4.19 1.46-6.23.69-2.27 1.44-4.52 2.41-6.69.25-.54.49-1.16 1.06-1.45.82-.44 1.81-.3 2.66-.05.97.33 1.98.66 2.76 1.33.57.47 1.03 1.15 1.05 1.9-.24 4.43-.46 8.88-.12 13.31.1 1.22.25 2.44.56 3.63.19.67.42 1.34.85 1.91.41.54 1.19.82 1.84.56.58-.22.97-.74 1.26-1.25.68-1.23.88-2.63 1.26-3.96.09-.4.28-.85.72-.99.31-.19.64.05.89.23.32.29.23.75.23 1.13-.09 2.14-.44 4.38-1.72 6.17-1.02 1.48-2.87 2.44-4.72 2.23-1.69-.08-3.27-1.03-4.18-2.41-1.16-1.71-1.62-3.75-1.93-5.75-.54-3.98-.4-8-.3-12-.17.11-.28.27-.36.44-1.15 2.23-1.93 4.63-2.54 7.05-.8 3.14-1.3 6.35-1.41 9.59.01.42-.32.73-.72.83-.91.36-1.99.44-2.89 0-.92-.42-1.59-1.23-2-2.12-.44-.91-.61-1.92-.76-2.91-.54-4.11-.73-8.26-.94-12.4.03-.3-.32-.11-.48-.08-2.07 3.51-3.12 7.49-3.65 11.48-.33 2.32-.44 4.66-.47 7 0 .42-.24.83-.62 1.04-.71.39-1.56.38-2.35.31-.94-.09-1.93-.17-2.73-.71-.34-.21-.56-.58-.58-.98-.06-.76-.07-1.52-.14-2.28-.43.61-.79 1.28-1.3 1.83-.82.94-1.88 1.74-3.13 2.03-1.77.39-3.74-.17-4.96-1.49-1-1.05-1.54-2.44-1.8-3.84-.89 1.88-2.33 3.57-4.24 4.53-.93.49-1.96.76-3.01.86-1.15.13-2.35 0-3.39-.52-1.53-.76-2.67-2.12-3.36-3.62-.81 1.77-2.2 3.48-4.2 4-1.97.53-4.1-.26-5.51-1.63-1.8-1.72-2.75-4.14-3.03-6.55-.16-1.16-.1-2.34-.02-3.51.18-2.61.47-5.24 1.17-7.77.01-.14.01-.28 0-.42-1.44-.07-2.88-.02-4.32.02-.71 2.38-1.77 4.65-2.95 6.84-2.04 3.74-4.55 7.24-7.36 10.47.03 3.11.13 6.23-.02 9.33-.16 2.47-.54 4.96-1.59 7.23-.8 1.69-2.06 3.22-3.77 4.11-1.27.69-2.72 1.05-4.16 1.14-1.8-.12-3.67-.56-5.07-1.72a5.462 5.462 0 0 1-1.92-3.15c-.19-1.06-.25-2.18.11-3.22.64-1.95 1.92-3.62 3.29-5.13 1.39-1.54 3-2.87 4.52-4.29 1.22-1.11 2.44-2.22 3.67-3.32.02-.86-.12-1.73-.14-2.59-.56.72-1.07 1.49-1.78 2.08-1.76 1.67-4.3 2.52-6.74 2.21-1.69-.29-3.07-1.43-4.09-2.73-.39-.47-.73-.98-1.02-1.51-.9 1.73-2.19 3.5-4.18 4.1-1.98.55-4.22-.24-5.52-1.77a7.176 7.176 0 0 1-1.59-3.59c-.83 1.74-2.11 3.33-3.81 4.33-1.09.66-2.35 1.04-3.63 1.14-1.39.16-2.83-.16-3.98-.94-2.07-1.42-3.09-3.82-3.7-6.13-.32 1.03-.85 1.99-1.38 2.92-.55.84-1.13 1.67-1.87 2.35-.87.83-1.96 1.49-3.18 1.65-1.41.18-2.88-.24-3.96-1.14-.88-.73-1.53-1.68-2-2.7-.89-1.86-1.22-3.91-1.4-5.94-1.1 2.36-2.39 4.69-4.31 6.51-1.47 1.46-3.33 2.58-5.38 3.06-1.62.41-3.3.36-4.95.22-1.42-.14-2.87-.41-4.13-1.1-.61-.35-1.22-.84-1.41-1.53-.12-.77.33-1.46.76-2.06.42-.55.89-1.13 1.58-1.38.64-.2 1.19.3 1.68.61.77.66 1.64 1.26 2.66 1.47.99.25 2.18-.07 2.77-.92.54-.8.69-1.78.74-2.71-.01-1.76-1.17-3.27-2.39-4.46-1.15-1.07-2.34-2.08-3.53-3.11-1.68 2.79-3.49 5.52-5.19 8.3-1.02 1.78-2.25 3.48-3.81 4.85-1.13.98-2.48 1.82-4 2.02-1.02.15-2.06-.35-2.68-1.12-.82-1.01-1.17-2.29-1.36-3.54-.31-2.24-.19-4.51-.16-6.76.04-2.87.19-5.73.29-8.59.02-.61.09-1.23.03-1.84-.2.04-.43.05-.56.23-2.81 3.09-4.57 6.92-5.93 10.79a60.316 60.316 0 0 0-2.53 10.41c-.45.36-1.06.46-1.63.37-.69-.1-1.39 0-2.07-.15-.61-.16-1.04-.68-1.27-1.22-.5-1.12-.56-2.36-.54-3.57.06-6.78.1-13.55.15-20.33-.02-.33.08-.74.44-.85.72-.22 1.48-.03 2.2.12.8.21 1.68.4 2.28 1 .31.28.18.73.2 1.09-.02 3.76-.07 7.52-.05 11.28 1.26-3.33 2.51-6.71 4.48-9.72.44-.62.86-1.26 1.4-1.8.94-1.06 2.23-2 3.72-2.03 1.12-.04 2.15.47 3.13.93.91.45 1.79 1.1 2.16 2.05.24.56.15 1.18.14 1.77-.1 3.23-.2 6.47-.31 9.7-.02 1.32-.13 2.64-.05 3.96.04.63.11 1.26.34 1.86.14.33.34.71.74.78.38.04.69-.22.97-.45.61-.54 1.11-1.19 1.6-1.84 1.39-1.89 2.58-3.9 3.77-5.9.7-1.24 1.43-2.47 2.07-3.74-.23-.37-.58-.67-.78-1.06a5.061 5.061 0 0 1-.58-4.1c.37-1.33 1.22-2.52 2.35-3.35.8-.55 1.72-.91 2.68-1.09.91-.23 1.92-.1 2.73.38.56.33.84.97.86 1.59.05 1.17-.39 2.29-.95 3.3-.54 1-1.25 1.91-1.99 2.77 2.38 1.69 4.85 3.3 6.9 5.38 1.08 1.11 1.97 2.47 2.15 4.01.13.8.02 1.6-.11 2.39 2.24-1.9 3.97-4.5 4.42-7.4.06-4.42.05-8.84.09-13.26-2.07-.04-4.15-.04-6.22-.09-.41-.24-.49-.75-.51-1.17 0-1.01.29-2.07 1-2.84.11-.16.32-.11.49-.12 1.85.02 3.69.05 5.54.07.09-2.05.14-4.09.22-6.14.02-.59 0-1.25.41-1.72Zm22.6 17.05c-1.21.24-2.12 1.19-2.68 2.21-.76 1.38-1.11 2.94-1.34 4.48-.28 2.01-.37 4.04-.26 6.07.11 1.56.33 3.16 1.07 4.57.41.77 1.04 1.48 1.9 1.77.56.22 1.22.19 1.76-.09 1.1-.55 1.85-1.57 2.4-2.62.97-1.93 1.39-4.08 1.61-6.21.18-2.21.24-4.48-.31-6.65-.29-1.03-.73-2.07-1.56-2.81-.68-.62-1.67-.92-2.58-.71Zm25.81.08c-1.46.39-2.47 1.62-3.12 2.89-.95 1.97-1.34 4.15-1.51 6.3-.11 2.42-.13 4.91.63 7.24.39 1.1 1.04 2.23 2.17 2.73.71.33 1.57.26 2.23-.15.56-.35 1.05-.82 1.44-1.35.9-1.2 1.44-2.63 1.81-4.07.54-2.14.71-4.35.7-6.54-.02-1.5-.16-3.02-.64-4.45-.31-.88-.8-1.75-1.6-2.29-.6-.42-1.41-.52-2.11-.31Zm44.78.18c-1.27.2-2.24 1.16-2.82 2.23-1.04 1.91-1.35 4.09-1.54 6.21-.16 2.39-.23 4.82.35 7.16.29 1.14.78 2.31 1.73 3.07.62.49 1.49.76 2.27.48 1.02-.33 1.73-1.18 2.29-2.03 1.3-2.1 1.78-4.57 2.02-6.99.18-2.2.23-4.44-.32-6.6-.28-1.06-.75-2.12-1.61-2.85-.63-.56-1.53-.85-2.38-.69Zm-41.72 26.49c-2.25 2.16-4.33 4.59-5.58 7.44-.45 1.02-.69 2.17-.37 3.26.22.84.9 1.56 1.78 1.78 1.08.28 2.32.28 3.3-.32.88-.57 1.46-1.49 1.81-2.45.67-1.84.8-3.81.89-5.74.03-1.89.08-3.78.1-5.67-.71.49-1.29 1.12-1.93 1.69Z' data-name='Isolation Mode' style='fill:%23050504;fill-rule:evenodd'/%3E%3C/svg%3E");
+블로그 
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='26' fill='none'%3E%3Cpath fill='%2331a836' fill-rule='evenodd' d='M13.1 7.158V4c2.842.277 5.42 1.997 5.42 5.625v10.376h-3.503V9.625c0-1.407-.713-2.234-1.918-2.467Zm-9.386 2.26c.77-.887 1.915-1.425 3.48-1.425v.001c3.061 0 5.584 2.687 5.584 6.167s-2.524 6.167-5.584 6.167c-1.564 0-2.71-.537-3.48-1.425v1.098H.21V4.427h3.504v4.991Zm-.229 4.743c0 1.897 1.265 3.085 3.009 3.085s3.008-1.188 3.008-3.085c0-1.896-1.264-3.084-3.008-3.084s-3.009 1.188-3.009 3.084Zm17.111 0c0-3.481 2.756-6.168 6.19-6.168 3.433 0 6.19 2.687 6.19 6.167s-2.756 6.167-6.19 6.167c-3.433 0-6.19-2.686-6.19-6.167Zm3.283 0c0 1.795 1.264 2.983 2.907 2.983s2.907-1.19 2.907-2.984-1.264-2.982-2.907-2.982-2.907 1.187-2.907 2.982Zm23.314-5.84h-3.41v1.19c-.77-.957-1.893-1.518-3.41-1.518-3.318 0-5.747 2.71-5.747 5.934s2.43 5.933 5.746 5.933c1.518 0 2.64-.56 3.411-1.519v1.075c0 1.659-1.005 2.5-2.64 2.5h-.116v3.083c3.108 0 6.167-1.659 6.167-5.583V8.321Zm-6.236 8.539c-1.795 0-3.058-1.188-3.058-2.932s1.264-2.932 3.058-2.932c1.795 0 3.059 1.188 3.059 2.932s-1.264 2.932-3.059 2.932Z' clip-rule='evenodd'/%3E%3C/svg%3E"); 
+*/
+.sns_part {
+  display: none;
+}
+.sns_part ul {
+  display: flex;
+  gap: 0 50px;
+}
+.sns_part li {
+  width: calc((100% - 150px) / 4);
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  padding: 15px 20px;
+  transition: all 0.3s ease-in-out;
+}
+.sns_part li img {
+  height: 20px;
+  width: auto;
+  margin-bottom: 15px;
+}
+.sns_part li p {
+  position: relative;
+  font-size: 15px;
+  color: #111;
+  padding-left: 35px;
+  margin-top: 5px;
+}
+.sns_part li p::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  align-self: center;
+  width: 20px;
+  height: 21px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_2' data-name='Layer 2' viewBox='0 0 34.34 36.98'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;stroke:%23000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2-2' data-name='Layer 2'%3E%3Cpath d='M10.45 15.34s3.01-7.12 4.63-10.22c1.62-3.1 4.16-4.93 5.88-3.2 1.72 1.73.65 11.15.65 11.15h4.71s6.78.15 6.77 5.67l-.04 11.5s-2.09 5.51-7.6 5.5c-5.52-.02-15.98-.05-15.98-.05l.98-20.35Z' class='cls-1'/%3E%3Cpath d='M1.25 14.92h9.94v20.82H1.25z' class='cls-1'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.sns_part .btn_more {
+  width: fit-content;
+  height: auto;
+  margin: 35px auto 0;
+  border: 1px solid #c2c2c2;
+  padding: 8px 15px;
+  font-size: 15px;
+  color: #696969;
+  transition: all 0.3s ease-in-out;
+}
+.sns_part .btn_more .icon_plus {
+  color: #111;
+  margin-right: 11px;
+}
+.sns_part .btn_more:hover,
+.sns_part .btn_more:focus,
+.sns_part .btn_more:active {
+  color: #111;
+  border-color: #111;
+}
+#youtube_part li {
+  width: calc((100% - 100px) / 3);
+} 
+.sns_part.on {
+  display: block;
 }
 
-/* 게시판 리스트 스타일 공통 css 뭉치기 */

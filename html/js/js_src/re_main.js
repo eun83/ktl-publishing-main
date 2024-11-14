@@ -16,7 +16,28 @@ $(document).ready(function () {
 
       button.addClass('on');
       control_area.addClass('on');
+      
+    } 
+    return false;
+    
+  });
 
+  // sns tap
+  $('.sns_wrap [control-area]').click(function(){
+    const button = $(this);
+    const control_area_id = button.attr('control-area');
+    if(control_area_id == ''){
+      return false;
+    }
+    if(!button.hasClass('on')){
+      const sns_wrap = button.closest('.sns_wrap');
+      const control_area = $('#'+control_area_id);
+      
+      sns_wrap.find('.tap_sns button.on').removeClass('on');
+      sns_wrap.find('.sns_part.on').removeClass('on');
+
+      button.addClass('on');
+      control_area.addClass('on');
       
     } 
     return false;
