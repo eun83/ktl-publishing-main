@@ -113,4 +113,27 @@ $(document).ready(function () {
     ]
   });
 
+  // promotion
+  $('.archive_list > .promotion > .promotion_slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 500,
+    arrows: true,
+    dots: false,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    vertical: false,
+    prevArrow: $('.archive_list > .promotion > .sub_title > .slider_control > .btn_prev'),
+    nextArrow: $('.archive_list > .promotion > .sub_title > .slider_control > .btn_next'),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          autoplay: false,
+        }
+      }
+    ]
+  });
+
 });

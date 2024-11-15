@@ -157,7 +157,7 @@
 
 /* contents */
 .re_main section {
-  padding: 50px 0;
+  padding: 60px 0;
 }
 .re_contents .ellips {
   width: 100%;
@@ -642,7 +642,7 @@
   gap: 0 50px;
 }
 .contents_04 .archive_list > div {
-  width: calc((100% - 150px) / 4);
+  width: calc((100% - 147px) / 4);
 }
 .archive_list .sub_title {
   display: flex;
@@ -654,14 +654,14 @@
   font-weight: 600;
   color: #111;
 }
-.archive_list .box_wrap {
-  position: relative;
-  height: 280px;
-  border: 1px solid #e2e2e2;
-}
 .archive_list .box_wrap a {
   display: block;
+  position: relative;
   padding: 25px;
+  height: 280px;
+  border: 1px solid #e2e2e2;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 .archive_list .box_wrap .icon_plus {
   position: absolute;
@@ -670,7 +670,8 @@
   width: 43px;
   height: 43px;
   border: 1px solid #e2e2e2;
-  border-width: 1px 0 0 1px;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
 }
 .archive_list .box_wrap .icon_plus::before {
   top: 20px;
@@ -684,9 +685,61 @@
   width: 1px;
   height: 17px;
 }
-
-
-
+.archive_list .box_wrap a:hover,
+.archive_list .box_wrap a:active,
+.archive_list .box_wrap a:focus {
+  border-color: #005f9a;
+}
+.archive_list .box_wrap a:hover .icon_plus,
+.archive_list .box_wrap a:active .icon_plus,
+.archive_list .box_wrap a:focus .icon_plus {
+  border-color: #005f9a;
+  background-color: #dfeef7;
+}
+.archive_list .box_wrap img {
+  width: 100%;
+  max-height: 146px;
+  object-fit: cover;
+  object-position: top center;
+  overflow: hidden;
+}
+.archive_list .promotion .img_box {
+  text-align: center;
+}
+.archive_list .promotion .box_wrap img {
+  width: fit-content;
+  max-height: 138px;
+  object-fit: contain;
+  margin: 0 auto;
+  -webkit-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);  
+}
+.archive_list .box_wrap .txt {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 24px;
+  word-break: keep-all;
+}
+.archive_list .promotion .box_wrap .txt {
+  margin-top: 33px;
+}
+.archive_list .box_wrap .txt p {
+  width: calc(100% - 25px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.archive_list .box_wrap .txt p span {
+  display: block;
+  font-size: 15px;
+  color: #797979;
+}
 
 
 
