@@ -240,26 +240,28 @@
 }
 .re_contents .director {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   flex-basis: 410px;
   position: relative;
-  padding: 0 215px 0 30px;
+  padding: 0 100px 0 30px;
   background-color: #0055ac;
 }
 .re_contents .director::after {
   display: block;
   position: absolute;
   top: -30px;
-  right: 10px;
-  width: 178px;
-  height: 183px;
+  right: 0;
+  width: 130px;
+  height: 133px;
   background-image: url(../../images/main/director_character.svg);
   background-repeat: no-repeat;
   content: '';
 }
 .re_contents .director p {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
+  line-height: 32px;
   color: #fff;
 }
 .re_contents .director p span {
@@ -267,22 +269,32 @@
   line-height: 20px;
 }
 .re_contents .director p span:first-child {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
-.re_contents .director p span b {
-  display: inline-block;
+.director_link {
+  display: flex;
+  margin-top: 25px;
+  gap: 0 10px;
+}
+.director_link a {
+  display: block;
   position: relative;
-  z-index: 1;
-}
-.re_contents .director p span b::after {
-  position: absolute;
-  bottom: -2px;
-  left: -3%;
-  z-index: -1;
-  width: 106%;
-  height: 7px;
+  padding: 5px 20px 5px 30px;
   background-color: #044689;
+  border-radius: 50px;
+  color: #fff;
+}
+.director_link a::before {
   content: '';
+  position: absolute;
+  left: 14px;
+  top: calc(50% - 3.5px);
+  width: 5px;
+  height: 5px;
+  border-top: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 /* contents 02 : board, banner */
