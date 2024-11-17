@@ -1,3 +1,7 @@
+function isMediaScreenMaxWidth(width) {
+  return window.matchMedia("(max-width: "+width+"px)").matches;
+}
+
 $(document).ready(function () {
   // web
   $('.re_gnb > .inner_wrap > .flex_wrap > .gnb > li').on('mouseover click', function () {
@@ -26,6 +30,66 @@ $(document).ready(function () {
     });
   });
 
+  // all menu gnb 목록 버튼
+  $('.btn_allmenu_open').on('click', function () {
+    $('#top-close-btn').click();
+
+    if (isMediaScreenMaxWidth(1280)) {
+      const $me = $(this);
+      if ($me.hasClass('actived')) {
+        $me.removeClass('actived')
+      } else {
+        $me.addClass('actived')
+      }
+    }
+    $('.re_header > .re_allmenu').toggleClass('on');
+  });
+  $('.btn_allmenu_close').on('click', () => {
+    $('.re_header > .re_allmenu').removeClass('on');
+  })
+
+  $('.re_allmenu .gnb').find('ul > li > a').filter(function () {
+    return $(this).siblings('ul').length > 0;
+  }).each(function (i) {
+    const $me = $(this);
+    //console.debug('['+(i)+']'+$me.text());
+    $me.closest('li').addClass('expand');
+  });
+
+  // 메뉴 전환 및 자식 메뉴
+  $('.re_allmenu .gnb li a').on('click', function (e) {
+    const $me = $(this);
+    const href = $me.attr('href');
+    if (href != '' && href != '#') {
+      return false;
+    }
+
+    if ($me.siblings('.re_gnb_depth01').length > 0) {
+      const $parent = $me.parent();
+      if (!$parent.hasClass('on')) {
+        $me.closest('ul').find('li.on').removeClass('on');
+        const subMenu = $me.siblings('ul');
+        subMenu.hide();
+        $parent.addClass('on');
+        subMenu.fadeIn();
+      }
+    } else if ($me.siblings('.re_gnb_depth02, .re_gnb_depth03').length > 0) {
+      const $parent = $me.parent();
+      if ($parent.hasClass('on')) {
+        $me.siblings('ul').slideUp(function () {
+          $parent.removeClass('on');
+        });
+      } else {
+        $me.closest('ul').find('li.on').removeClass('on').find('ul').slideUp();
+        $me.siblings('ul').slideDown();
+        $parent.addClass('on');
+      }
+    } else {
+      console.warn('href is empty. target.text=' + $me.text());
+    }
+    return false;
+  });
+  
 
 
 
