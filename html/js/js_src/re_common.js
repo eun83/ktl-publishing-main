@@ -30,6 +30,29 @@ $(document).ready(function () {
     });
   });
 
+
+  // 검색 버튼
+  $('.btn_top_search_open').on('click', function () {
+    $('.btn_allmenu_close').click();
+    $('.total_search').addClass('on');
+    return false;
+  });
+
+  // 검색 닫기 버튼
+  $('#top-close-btn').on('click', function () {
+    $('.total_search').removeClass('on');
+    return false;
+  });
+
+  $('.delete_term').on('click', function (e) {
+    e.preventDefault();
+    const $me = $(this);
+    const emptyTarget = $me.attr('empty_target');
+    if (emptyTarget && emptyTarget != '') {
+      $(emptyTarget).val('').focus();
+    }
+  });
+
   // all menu gnb 목록 버튼
   $('.btn_allmenu_open').on('click', function () {
     $('#top-close-btn').click();
@@ -90,10 +113,24 @@ $(document).ready(function () {
     return false;
   });
   
+  // 유관기관 셀렉트
+  const $selectBtns = $('.link_select > button');
 
+  $selectBtns.on('click', function (e) {
+    e.stopPropagation();
+    const $parent = $(this).parent(); 
+    if ($parent.hasClass('on')) {
+      $parent.removeClass('on');
+    } else {
+      $('.link_select').removeClass('on');
+      $parent.addClass('on');
+    }
+  });
 
+  $(document).on('click', function () { // 다른영역 클릭 시 클래스 제거
+    $('.link_select').removeClass('on'); 
+  });
 
-  
   // top_banner
   $('.top_banner_slider').slick({
     infinite: true,

@@ -440,13 +440,16 @@
   width: calc(100% - 254px);
 }
 .contents_02 .press_wrap .press_accent {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 10px;
+  height: 55px;
   padding: 8px 15px 3px;
   background-color: #f6f6f6;
 }
 .contents_02 .press_wrap .press_accent p {
-  font-size: 19px;
-  line-height: 20px;
+  font-size: 17px;
   color: #111;
 }
 .contents_02 .press_wrap .press_accent span {
@@ -454,12 +457,23 @@
   color: #696969;
 }
 .contents_02 .press_wrap .press_list {
-  padding: 5px 30px 0;
+  padding: 7px 10px 0 30px;
 }
 .contents_02 .press_wrap .press_list a {
+  position: relative;
   font-size: 16px;
   line-height: 24px;
   color: #111;
+}
+.contents_02 .press_wrap .press_list a p::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: -14px;
+  width: 3px;
+  height: 3px;
+  background-color: #111;
 }
 
 /* contents 03 : SNS */
