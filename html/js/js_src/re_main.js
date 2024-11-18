@@ -45,7 +45,21 @@ $(document).ready(function () {
   });
 
   // visual
-  $('.visual_slider').slick({
+  $('.visual_slider').on('init', function(_event, slick){
+    slick.$slider.siblings('.slider_control').find('.pagination .page_total').text(String(slick.slideCount).padStart(2, '0'));
+    slick.$slider.siblings('.slider_control').find('.btn_current').click(function(){
+      const $me = $(this);
+      const target = $me.find('.icon_play,.icon_stop');
+      if(target.hasClass('icon_play')){
+        target.removeClass('icon_play').addClass('icon_stop');
+        slick.$slider.slick('slickPause'); // 슬라이더 중지
+      } else {
+        target.removeClass('icon_stop').addClass('icon_play');
+        slick.$slider.slick('slickPlay'); // 슬라이더 시작
+      }
+      return false;
+    });
+  }).slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -65,6 +79,9 @@ $(document).ready(function () {
         }
       }
     ]
+  }).on('afterChange', function (event, slick, currentSlide) {
+    slick.$slider.siblings('.slider_control').find('.pagination .page_current').text(String(currentSlide+1).padStart(2, '0'));
+    //slick.$slider.siblings('.slider_control').find('.pagination .page_total').text(String(slick.slideCount).padStart(2, '0'));
   });
 
   // banner notice

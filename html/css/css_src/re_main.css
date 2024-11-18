@@ -101,7 +101,7 @@
   justify-content: center;
 }
 .control_box button {
-  display: none;
+  /* display: none; */
 }
 .control_box .btn_current {
   display: block;
