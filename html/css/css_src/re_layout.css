@@ -154,15 +154,13 @@
 }
 /* 유관기관 list */
 .re_top_menu .link_select .link_list {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  transition: all .2s cubic-bezier(.59, .01, .43, 1) 100ms;
 
   display: block;
+  visibility: hidden;
   position: absolute;
   z-index: 201;
   width: fit-content;
+  height: 0;
   margin-top: -1px;
   padding: 5px;
   border: 1px solid #bcbcbc;
@@ -170,6 +168,8 @@
   font-size: 14px;
   line-height: 28px;
   color: #444;
+  transition: all .2s cubic-bezier(.59, .01, .43, 1) 100ms;
+  opacity: 0;
 }
 .re_top_menu .link_select.on .link_list {
   visibility: visible;
@@ -201,6 +201,9 @@
   font-family: 'Myriad Web Pro','Malgun Gothic',Arial,sans-serif;
   font-size: 14px;
   letter-spacing: 0;
+}
+.re_top_menu .top_utils .korean {
+  font-family: 'Pretendard','NotoKR','Malgun Gothic',Arial,sans-serif;
 }
 .re_top_menu .top_banner {
   position: relative;
@@ -595,11 +598,11 @@
 }
 .re_allmenu .allmenu_wrap {
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
   z-index: 302;
   width: 590px;
-  height: 720px;
+  height: 680px;
   background-color: #fff;
   border-radius: 5px;
   transform: translateX(-50%);
@@ -642,7 +645,7 @@
 }
 .allmenu_wrap .gnb {
   width: 40%;
-  height: 650px;
+  height: 610px;
   background-color: #005f9a;
   border-radius: 0 0 0 5px;
 }
@@ -660,7 +663,7 @@
   top: 70px;
   left: calc(40% - 1px);
   width: calc(60% - 20px);
-  height: 650px;
+  height: 610px;
   padding: 10px 30px;
   overflow-y: scroll;
   background-color: #fff;
@@ -668,11 +671,11 @@
 }
 .allmenu_wrap .gnb .re_gnb_depth01 > li > a {
   position: relative;
+  min-height: 50px;
   padding: 16px 10px 15px;
   border-bottom: 1px solid #ced1d3;  
   font-size: 16px;
   font-weight: 500;
-  min-height: 50px;
   color: #454545;
   transition: .25s;
 }
@@ -692,9 +695,9 @@
   transition: .25s;
 }
 .allmenu_wrap .gnb .re_gnb_depth02 {
-  background-color: #f4f8fb;
   padding: 15px 0;
   border-bottom: 1px solid #ced1d3;
+  background-color: #f4f8fb;
 }
 .allmenu_wrap .gnb .re_gnb_depth02 li {
   margin-bottom: 2px;
@@ -789,6 +792,25 @@
   opacity: 1;
 }
 
+/* top button */
+.btn_top {
+  display: block;
+  position: fixed;
+  right: 5vw;
+  bottom: 10vh;
+  width: 50px;
+  height: 45px;
+  border: 1px solid #111;
+  background-color: rgba(255, 255, 255, .5);
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  backdrop-filter: blur(5px);
+}
+.btn_top:hover {
+  border-color: #005f9a;
+  color: #005f9a;
+}
 
 /* ---------- respond ---------- */
 
@@ -817,28 +839,28 @@
     }
   .re_top_menu {
     position: absolute;
-    width: 100%;
     top: 68px;
-    background-color: #f4f8fb;
-    padding: 6px 0;
+    width: 100%;
     height: 35px;
+    padding: 6px 0;
+    background-color: #f4f8fb;
   }
   .re_top_menu .right_wrap {
     height: auto;
     margin-left: auto;
   }
   .re_top_menu .top_utils {
-    padding: 0;
     gap: 0;
+    padding: 0;
     text-transform: uppercase;
   }
   .re_top_menu .top_utils li::before {
-    content: '';
     display: inline-block;
     width: 1px;
     height: 8px;
-    background-color: #a3a3a3;
     margin: 0 12px;
+    background-color: #a3a3a3;
+    content: '';
   }
   .re_top_menu .top_utils li:first-child::before {
     display: none;
@@ -861,17 +883,17 @@
     width: 0;
     height: 100vh;
     padding: 0;
-    border-radius: 0;
-    transform: translateX(0);
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
     -ms-transition: all 500ms ease-in-out;
     -o-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
+    border-radius: 0;
+    transform: translateX(0);
   }
   .re_allmenu.on .allmenu_wrap {
-    width: 100%;
     right: 0;
+    width: 100%;
   }
   .allmenu_wrap .allmenu_title {
     display: none;

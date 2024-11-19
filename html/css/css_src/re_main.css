@@ -147,6 +147,7 @@
   color: #fff;
   text-align: center;
   word-break: keep-all;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, .75), -2px -2px 5px rgba(0, 0, 0, .75);
 }
 .visual .visual_contents h2.title {
   margin-bottom: 0;
@@ -502,7 +503,7 @@
 .contents_03 .hashtag li:focus,
 .contents_03 .hashtag li:active {
   color: #111;
-  cursor: pointer;
+  cursor: default;
 }
 .contents_03 .tap_sns {
   display: flex;
@@ -1090,7 +1091,7 @@
   }
   .service_list .dust_info {
     flex-direction: column;
-    gap: 10px 0;
+    gap: 20px 0;
   }
   .service_list .dust_info .info_title span {
     display: inline-block;

@@ -154,5 +154,23 @@ $(document).ready(function () {
     ]
   });
 
+  // top 버튼
+  const $topButton = $('.btn_top'); // 버튼 선택
+
+  // 스크롤 이벤트
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) { // 스크롤이 300px 이상 내려가면
+      $topButton.fadeIn(); // 버튼 나타나기
+    } else {
+      $topButton.fadeOut(); // 버튼 사라지기
+    }
+  });
+
+  // 버튼 클릭 이벤트
+  $topButton.click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 600); // 부드럽게 스크롤
+    return false; // 기본 동작 방지
+  });
+
 
 });
