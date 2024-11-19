@@ -34,6 +34,8 @@ $(document).ready(function () {
   // 검색 버튼
   $('.btn_top_search_open').on('click', function () {
     $('.btn_allmenu_close').click();
+    $('.re_header > .re_allmenu').removeClass('on');
+    $('.btn_allmenu_open').removeClass('actived');
     $('.total_search').addClass('on');
     return false;
   });
