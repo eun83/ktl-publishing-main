@@ -790,15 +790,15 @@
 }
 .archive_list .promotion .img_box .img_shadow {
   display: inline-block;
+}
+.archive_list .promotion .box_wrap img {
+  width: 99px;
+  height: 138px;
+  margin: 0 auto;
+  object-fit: contain;  
   -webkit-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
-}
-.archive_list .promotion .box_wrap img {
-  width: fit-content;
-  max-height: 138px;
-  margin: 0 auto;
-  object-fit: contain;  
 }
 .archive_list .box_wrap .txt {
   display: flex;
