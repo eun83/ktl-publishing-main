@@ -779,8 +779,6 @@
 }
 .archive_list .box_wrap img {
   width: 100%;
-  max-height: 146px;
-  
   overflow: hidden;
   object-fit: cover;
   object-position: top center;
@@ -788,9 +786,9 @@
 .archive_list .promotion .img_box {
   text-align: center;
 }
-.archive_list .promotion .img_box .img_shadow {
+/* .archive_list .promotion .img_box .img_shadow {
   display: inline-block;
-}
+} */
 .archive_list .promotion .box_wrap img {
   width: 99px;
   height: 138px;
