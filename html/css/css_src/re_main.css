@@ -800,6 +800,9 @@
   -moz-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.2);
 }
+.promotion .slider_control .slick-disabled {
+  opacity: .25;
+}
 .archive_list .box_wrap .txt {
   display: flex;
   align-items: center;
