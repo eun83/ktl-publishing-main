@@ -1,11 +1,4 @@
 @charset "utf-8";
-/* var() */
-:root {
-
-}
-
-/* svg images */
-
 
 /* button */
 .btn_basic {
@@ -769,12 +762,12 @@
 .archive_list .promotion_slider:hover,
 .archive_list .promotion_slider:active,
 .archive_list .promotion_slider:focus {
-  border-color: #005f9a;
+  border-color: var(--clr_main);
 }
 .archive_list .box_wrap a:hover .icon_plus,
 .archive_list .box_wrap a:active .icon_plus,
 .archive_list .box_wrap a:focus .icon_plus {
-  border-color: #005f9a;
+  border-color: var(--clr_main);
   background-color: #dfeef7;
 }
 .archive_list .box_wrap img {
