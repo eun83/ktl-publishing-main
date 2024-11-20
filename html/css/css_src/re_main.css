@@ -1085,6 +1085,13 @@
   .re_contents .director {
     padding: 30px 120px 30px 30px;
   }
+  /* contents 04 */
+  .contents_04 .youtube_play::after {
+    display: block;
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+  }
   /* contents 05 */
   .service_list {
     gap: 35px 20px;
